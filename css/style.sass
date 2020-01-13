@@ -1,0 +1,343 @@
+﻿$text: #2e3755
+$green: #8abb49
+$gray: #f4f8fb
+$blue: #5270ba
+=placeholder($color)
+	&::-webkit-input-placeholder 
+		color: $color
+	&::-moz-placeholder 
+		color: $color
+	&:-ms-input-placeholder
+		color: $color
+		
+=pos
+	display: block
+	position: absolute
+	top: 0
+	left: 0
+	width: 100%
+	height: 100%
+	
+=obj
+	object-fit: cover
+	object-position: center
+
+=unlist
+	list-style: none
+	margin: 0
+	padding: 0
+	>li
+		margin-bottom: 0
+
+html
+	box-sizing: border-box
+
+*,:before,:after
+	box-sizing: inherit
+	flex: 0 1 auto
+
+body
+	margin: 0
+	padding: 0
+	display: flex
+	flex-direction: column
+	min-height: 100vh
+	font: normal normal 15px/1.6 "Open Sans",sans-serif
+	color: $text
+
+header,footer
+	flex: 0 0 auto
+
+main
+	flex-grow: 1
+
+img,
+iframe,
+video
+	max-width: 100%
+	user-select: none
+
+a img
+	border: none
+	
+a
+	color: $blue
+
+p
+	margin: 0 0 1.2em
+	&:last-child
+		margin: 0
+
+figure
+	margin: 3.9em 0 3.95em
+	text-align: center
+	&:first-child
+		margin-top: 0
+	&:last-child
+		margin-bottom: 0
+	img
+		vertical-align: top
+		border-radius: 10px
+figcaption
+	font-size: 14px
+	line-height: 24/14*1
+	font-style: italic
+	color: transparentize($text,.3)
+	margin: .9em 0 0
+blockquote
+	margin: 4.8em 0 3.8em
+	position: relative
+	background-color: $gray
+	padding: 26px 32px 32px
+	&:first-child
+		margin-top: 0
+	&:last-child
+		margin-bottom: 0
+	&:before
+		content: '\e90c'
+		font: normal normal 30px/1 icomoon
+		color: $blue
+		display: inline-block
+		position: absolute
+		top: -15px
+		left: -14px
+em
+	display: block
+	border-left: 3px solid $blue
+	padding: 0 0 0 1.8em
+	font-weight: bold
+	font-style: italic
+	margin: 3.7em 0
+	&:first-child
+		margin-top: 0
+	&:last-child
+		margin-bottom: 0
+
+*:focus
+	outline: none
+
+*:invalid
+	box-shadow: none
+
+/*элементы форм*/
+input,textarea,button,select
+	font: inherit
+	color: inherit	
+	
+textarea
+	resize: none
+	overflow: auto
+	
+//select
+	appearance: none
+	padding: 10.5px 40px 10.5px 20px
+	background: url(../img/icons/angle.svg) no-repeat right 19px center/11px auto
+	&::-ms-expand
+		display: none
+		
+//[type=search]
+	&::-webkit-search-decoration,
+	&::-webkit-search-cancel-button,
+	&::-webkit-search-results-button,
+	&::-webkit-search-results-decoration
+		display: none
+		
+//[type=number]
+	-moz-appearance: textfield
+	&::-webkit-outer-spin-button,
+	&::-webkit-inner-spin-button
+		appearance: none
+		margin: 0
+		
+/*кнопки*/
+button,
+[type=submit],
+[type=reset],
+[type=image]
+	cursor: pointer
+
+/*заголовки*/
+h1,h2,h3,h4,h5,h6
+	margin: 0 0 1em
+	&:first-child
+		margin-top: 0
+	&:last-child
+		margin-bottom: 0
+h1
+	font-size: 30px
+	line-height: 1
+	margin: 0 0 .75em
+h2
+	font-size: 24px
+	line-height: 30/24*1
+	margin: 0 0 .8em
+h3
+	font-size: 18px
+	line-height: 30/18*1
+	margin: 0 0 .88em
+h4
+	font-size: 16px
+	line-height: 30/16*1
+	margin: 3.4em 0 .9em
+
+/*списки*/
+ol
+	padding: 0 0 0 3.6em
+	margin: 0 0 1.8em
+	&:last-child
+		margin-bottom: 0
+	>li
+		margin: 0 0 .4em
+		&:last-child
+			margin-bottom: 0
+ul
+	padding: 0 0 0 3.6em
+	margin: 0 0 1.8em
+	list-style-image: url(../img/list-marker.svg)
+	&:last-child
+		margin-bottom: 0
+	>li
+		margin-bottom: .4em
+		&:last-child
+			margin-bottom: 0
+		
+/*таблицы*/
+/*контейнеры*/
+.wrapper
+	max-width: 1030px
+	margin: 0 auto
+	padding: 0 20px
+
+/*ШАПКА*/
+.logo
+	display: inline-block
+	img
+		display: block
+		width: 100%
+		height: 100%
+.menu-btn
+	display: none
+.search-btn
+	display: inline-block
+	font-size: 20px
+	cursor: pointer
+	color: inherit
+	text-decoration: none
+.header
+	padding: 31px 0 25px
+	border-bottom: 2px solid transparentize($text,.9)
+	&__wrapper
+		display: flex
+		align-items: center
+		flex-wrap: wrap
+	&__logo
+		width: 181px
+		flex: 0 0 auto
+	&__menu
+		+unlist
+		margin: 0 auto
+		display: flex
+		align-items: center
+		flex-wrap: wrap
+		font-size: 16px
+		font-weight: 600
+		>li
+			&.desktop-hidden
+				display: none
+			>a
+				display: block
+				color: inherit
+				text-decoration: none
+				padding: 10px 30px
+		ul
+			display: none
+	
+
+/*ОСНОВНОЕ СОДЕРЖИМОЕ*/
+.sidebar-page
+	padding: 35px 0 110px
+	&__inner
+		display: flex
+	&__content
+		width: calc(100% - 340px)
+		flex: 1 1 auto
+	&__sidebar
+		width: 310px
+		margin: 0 0 0 30px
+		flex: 0 0 auto
+		padding-top: 10px
+.breadcrumbs
+	font-size: 14px
+	line-height: 30/14*1
+	font-weight: 600
+	color: $blue
+	margin: 0 0 40px
+	a
+		text-decoration: none
+	span
+		color: transparentize($text,.5)
+.text-block
+	margin: 0 0 103px
+	&:last-child
+		margin-bottom: 0
+.comment
+	margin: 0 0 26px
+	&__head
+		display: flex
+		flex-wrap: wrap
+		align-items: baseline
+		justify-content: space-between
+		border-bottom: 2px solid transparentize($text,.9)
+		padding-bottom: 11px
+		margin-bottom: 12px
+	&__author
+		margin: 0 1em 0 0
+		font: inherit
+		font-weight: bold
+	&__date
+		font-size: 14px
+		line-height: 24/14*1
+		color: transparentize($text,.5)
+	&__footer
+		margin: .9em 0 0
+	&__link
+		font-size: 14px
+		text-decoration: none
+.comments
+	&__title
+		margin: 0 0 1.2em
+	&__list
+		+unlist
+	&__sub
+		+unlist
+		padding: 0 0 0 32px
+		
+.menu
+	+unlist
+	font-size: 16px
+	line-height: normal
+	font-weight: bold
+	>li
+		position: relative
+		&:after
+			content: ''
+			display: block
+			position: absolute
+			bottom: 0
+			left: 30px
+			width: calc(100% - 60px)
+			border-top: 2px solid
+			opacity: .1
+		>a
+			display: block
+			color: inherit
+			text-decoration: none
+			border-left: 3px solid transparent
+			padding: 14px 40px 14px 27px
+	ul
+		display: none
+			
+/*ПОДВАЛ*/
+
+/*АДАПТИВ*/
+@import "adaptive"

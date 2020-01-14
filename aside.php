@@ -10,9 +10,9 @@
 			</ul>
 		</li>
 		<li><a href="#">Кейсы</a></li>
-		<li>
+		<li class="open">
 			<a href="#">База знаний</a>
-			<ul>
+			<ul style="display:block">
 				<li><a href="#">Подраздел 1</a></li>
 				<li><a href="#">Подраздел 2</a></li>
 				<li><a href="#">Подраздел N</a></li>
@@ -26,7 +26,7 @@
 			<div class="small-card">
 				<a href="#" class="small-card__pic"><img src="img/post.png" alt="" /></a>
 				<div class="small-card__text">
-					<div class="small-card__category"><a href="#">Анализ</a></div>
+					<a href="#" class="small-card__category">Анализ</a>
 					<h4 class="small-card__title"><a href="#">Настройка memcached через unix-сокеты</a></h4>
 					<div class="small-card__date">28 января 2020</div>
 				</div>
@@ -34,7 +34,7 @@
 			<div class="small-card">
 				<a href="#" class="small-card__pic"><img src="img/post.png" alt="" /></a>
 				<div class="small-card__text">
-					<div class="small-card__category"><a href="#">Внешняя оптимизация</a></div>
+					<a href="#" class="small-card__category">Внешняя оптимизация</a>
 					<h4 class="small-card__title"><a href="#">Топ 5 проблем интернет-магазинов</a></h4>
 					<div class="small-card__date">28 января 2020</div>
 				</div>
@@ -42,7 +42,7 @@
 			<div class="small-card">
 				<a href="#" class="small-card__pic"><img src="img/post.png" alt="" /></a>
 				<div class="small-card__text">
-					<div class="small-card__category"><a href="#">Деньги</a></div>
+					<a href="#" class="small-card__category">Деньги</a>
 					<h4 class="small-card__title"><a href="#">Недостатки слайдеров на стартовой странице</a></h4>
 					<div class="small-card__date">28 января 2020</div>
 				</div>
@@ -50,7 +50,7 @@
 			<div class="small-card">
 				<a href="#" class="small-card__pic"><img src="img/post.png" alt="" /></a>
 				<div class="small-card__text">
-					<div class="small-card__category"><a href="#">Контент</a></div>
+					<a href="#" class="small-card__category">Контент</a>
 					<h4 class="small-card__title"><a href="#">Модуль «Сео-фильтр»</a></h4>
 					<div class="small-card__date">28 января 2020</div>
 				</div>
@@ -67,8 +67,8 @@
 		<li><a href="#">Поисковые системы</a></li>
 		<li><a href="#">Контент</a></li>
 	</ul>
-	<a href="#" class="banner">
-		<span class="btn banner__btn">Кейсы</span>
+	<a href="#" class="banner" style="background-image:url(img/banner.png)">
+		<span class="btn btn--medium banner__btn">Кейсы</span>
 		<strong class="banner__text">Настройка memcached через unix-сокеты в BitrixVM</strong>
 	</a>
 	<div class="coments-widget">

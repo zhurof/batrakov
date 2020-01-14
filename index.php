@@ -105,16 +105,18 @@
 							<input type="text" placeholder="Имя">
 							<input type="email" placeholder="Email">
 						</div>
-						<textarea name="" rows="7" placeholder="Комментарий"></textarea>
+						<textarea name="" rows="5" placeholder="Комментарий"></textarea>
 						<button class="btn comments__submit-btn">Оставить комментарий</button>
 					</form>
 				</div>
 				<div class="similar-posts">
 					<h2 class="similar-posts__title">Похожие записи</h2>
-					<a href="post.php">Настройка memcached через unix-сокеты</a><br/>
-					<a href="post.php">Топ 5 проблем интернет-магазинов</a><br/>
-					<a href="post.php">Недостатки слайдеров на стартовой странице</a><br/>
-					<a href="post.php">Модуль «Сео-фильтр»</a>
+					<ul class="similar-posts__list">
+						<li><a href="post.php">Настройка memcached через unix-сокеты</a></li>
+						<li><a href="post.php">Топ 5 проблем интернет-магазинов</a></li>
+						<li><a href="post.php">Недостатки слайдеров на стартовой странице</a></li>
+						<li><a href="post.php">Модуль «Сео-фильтр»</a></li>
+					</ul>
 				</div>
 			</div>
 			<? include "aside.php";?>

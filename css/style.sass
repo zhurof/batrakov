@@ -44,7 +44,7 @@ body
 	min-height: 100vh
 	font: normal normal 15px/1.6 "Open Sans",sans-serif
 	color: $text
-
+	min-width: 320px
 header,footer
 	flex: 0 0 auto
 
@@ -128,6 +128,21 @@ textarea
 	resize: none
 	overflow: auto
 	
+[type=text],
+[type=tel],
+[type=email],
+[type=url],
+[type=password],
+textarea
+	display: block
+	width: 100%
+	margin: 0 0 20px
+	border-radius: 10px
+	border: 1px solid $text
+	line-height: normal
+	padding: 14px 25px
+	font-size: 15px
+	
 //select
 	appearance: none
 	padding: 10.5px 40px 10.5px 20px
@@ -148,6 +163,12 @@ textarea
 	&::-webkit-inner-spin-button
 		appearance: none
 		margin: 0
+.double-field
+	display: flex
+	align-items: flex-start
+	justify-content: space-between
+	>*
+		flex: 0 0 calc(50% - 15px)
 		
 /*кнопки*/
 button,
@@ -155,7 +176,29 @@ button,
 [type=reset],
 [type=image]
 	cursor: pointer
-
+.btn
+	appearance: none
+	display: inline-block
+	vertical-align: top
+	border: none
+	border-radius: 10px
+	padding: 0 53px
+	background-color: $green
+	color: #fff
+	font: normal 600 15px/50px "Open Sans",sans-serif
+	text: 
+		align: center
+		decoration: none
+		transform: none
+		shadow: none
+		overflow: ellipsis
+	white-space: nowrap
+	max-width: 100%
+	user-select: none
+	overflow: hidden
+	&--medium
+		line-height: 35px
+		padding: 0 16px
 /*заголовки*/
 h1,h2,h3,h4,h5,h6
 	margin: 0 0 1em
@@ -186,6 +229,8 @@ ol
 	margin: 0 0 1.8em
 	&:last-child
 		margin-bottom: 0
+	&:first-child
+		margin-top: 0
 	>li
 		margin: 0 0 .4em
 		&:last-child
@@ -255,7 +300,7 @@ ul
 
 /*ОСНОВНОЕ СОДЕРЖИМОЕ*/
 .sidebar-page
-	padding: 35px 0 110px
+	padding: 35px 0 102px
 	&__inner
 		display: flex
 	&__content
@@ -274,14 +319,16 @@ ul
 	margin: 0 0 40px
 	a
 		text-decoration: none
+		display: inline-block
 	span
 		color: transparentize($text,.5)
+		display: inline-block
 .text-block
 	margin: 0 0 103px
 	&:last-child
 		margin-bottom: 0
 .comment
-	margin: 0 0 26px
+	margin: 0 0 24px
 	&__head
 		display: flex
 		flex-wrap: wrap
@@ -304,40 +351,268 @@ ul
 		font-size: 14px
 		text-decoration: none
 .comments
+	margin: 0 0 101px
+	&:last-child
+		margin-bottom: 0
 	&__title
 		margin: 0 0 1.2em
 	&__list
 		+unlist
+		margin: 0 0 60px
+		&:last-child
+			margin-bottom: 0
 	&__sub
 		+unlist
 		padding: 0 0 0 32px
-		
+	&__submit-btn
+		text-transform: uppercase
+.similar-posts
+	margin: 0 0 60px
+	&:last-child
+		margin-bottom: 0
+	&__list
+		+unlist
+		>li
+			margin: 0 0 .66em
+			&:last-child
+				margin-bottom: 0		
 .menu
 	+unlist
 	font-size: 16px
 	line-height: normal
 	font-weight: bold
+	margin: 0 0 48px
 	>li
 		position: relative
-		&:after
+		&:before
 			content: ''
 			display: block
 			position: absolute
-			bottom: 0
+			top: 0
 			left: 30px
 			width: calc(100% - 60px)
 			border-top: 2px solid
 			opacity: .1
+		&:first-child:before
+			display: none
+		&.active
+			&:before
+				opacity: 0
+			&+li:before
+				opacity: 0
+			>a
+				border-color: $green
+				background-color: $gray
+		&.open>a:after
+			transform: scaleY(-1)
 		>a
 			display: block
 			color: inherit
 			text-decoration: none
 			border-left: 3px solid transparent
 			padding: 14px 40px 14px 27px
+			position: relative
+			&:not(:only-child):after
+				content: '\e904'
+				font: normal normal 8px/1 icomoon
+				display: inline-block
+				position: absolute
+				right: 30px
+				top: calc(50% - .5em)
+				transition: all .3s ease				
 	ul
+		+unlist
+		padding: 3px 50px 6px
 		display: none
-			
+		font-size: 15px
+		font-weight: 400
+		line-height: 1.6
+		opacity: .8
+		>li
+			margin: 0 0 .7em
+			>a
+				color: inherit
+				text-decoration: none
+			&.active>a
+				color: $blue
+.small-card
+	display: flex
+	align-items: flex-start
+	border-bottom: 2px solid transparentize($text,.9)
+	padding: 17px 0
+	&:last-child
+		border-bottom: none
+	&__pic
+		display: block
+		flex: 0 0 auto
+		margin: 1px 20px 0 0
+		img
+			display: block
+			width: 70px
+			height: 70px
+			border-radius: 10px
+			+obj
+	&__text
+		flex: 1 1 calc(100% - 90px)
+	&__category
+		display: block
+		width: max-content
+		max-width: 100%
+		color: $green
+		font-weight: 600
+		margin: 0 0 .3em
+		text-decoration: none
+	&__title
+		font-size: inherit
+		line-height: inherit
+		margin: 0 0 .4em
+		a
+			color: inherit
+			text-decoration: none
+	&__date
+		color: transparentize($text,.5)
+.blog-widget
+	margin: 0 0 39px
+	&:last-child
+		margin-bottom: 0
+	&__title
+		font-size: 24px
+		line-height: 30/24*1
+		margin: 0 0 1em
+.tags
+	+unlist
+	display: flex
+	flex-wrap: wrap
+	align-items: center
+	margin: 0 -2.5px 56px
+	font-weight: 600
+	>li
+		margin: 2.5px
+		>a
+			display: block
+			color: inherit
+			text-decoration: none
+			background-color: $gray
+			font-size: 15px
+			line-height: 35px
+			padding: 0 18px
+			text-align: center
+			border-radius: 6px
+			user-select: none
+.banner
+	display: flex
+	flex-direction: column
+	align-items: center
+	background: 
+		size: cover
+		position: center
+		repeat: no-repeat
+		color: $text
+	border-radius: 10px
+	color: #fff
+	text-align: center
+	text-decoration: none
+	font-size: 18px
+	line-height: 30/18*1
+	padding: 142px 30px 140px
+	margin: 0 auto 62px
+	position: relative
+	overflow: hidden
+	&:before
+		content: ''
+		+pos
+		background-color: transparentize($text,.3)
+	&:last-child
+		margin-bottom: 0
+	&__btn
+		margin: 0 0 17px
+		position: relative
+	&__text
+		position: relative
+.comments-widget
+	margin: 0 0 60px
+	&:last-child
+		margin-bottom: 0
+	&__title
+		font-size: 24px
+		line-height: 30/24*1
+		margin: 0 0 1em
+	&__item
+		padding: 17px 0
+		border-bottom: 2px solid transparentize($text,.9)
+		&:last-child
+			border-bottom: none
+	&__author
+		font-size: inherit
+		line-height: inherit
+		margin: 0 0 .7em
+.social-link
+	display: flex
+	width: max-content
+	max-width: 100%
+	align-items: center
+	margin: 0 0 15px
+	text-decoration: none
+	i
+		display: inline-block
+		width: 30px
+		height: 30px
+		border-radius: 50%
+		background-color: $text
+		color: #fff
+		flex: 0 0 auto
+		margin: 0 10px 0 0
+		font-size: 15px
+		line-height: 30px
+		text-align: center
+		&.fa-telegram,
+		&.fa-paper-plane
+			background-color: #69b6dc
 /*ПОДВАЛ*/
 
+.footer
+	background-color: $gray
+	padding: 58px 0 60px
+	&__wrapper
+		display: flex
+		align-items: flex-start
+		flex-wrap: wrap
+		justify-content: space-between
+	&__main
+		flex: 0 1 425px
+		margin: 5px 15px 0 0
+		display: flex
+		flex-wrap: wrap
+		align-items: center
+		justify-content: space-between
+	&__logo
+		width: 183px
+		margin: 0 15px 19px 0
+	&__copy
+		font-size: 30px
+		line-height: 1
+		font-weight: 900
+		margin: 0 auto 19px
+	&__text
+		font-size: 14px
+		line-height: 1.5
+		color: transparentize($text,.3)
+	&__menu
+		+unlist
+		flex: 0 1 280px
+		columns: 2
+		column-gap: 58px
+		margin: 0 15px
+		padding: 0 0 0 25px
+		font-weight: 600
+		>li
+			margin: 0 0 1.05em
+			>a
+				color: inherit
+				text-decoration: none
+	&__social
+		flex: 0 1 139px
+		margin: 2px 0 0 15px
+		
 /*АДАПТИВ*/
 @import "adaptive"

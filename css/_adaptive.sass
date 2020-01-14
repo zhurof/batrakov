@@ -1,12 +1,196 @@
-﻿@media(max-width:1199px)
-	.wrapper
-		max-width: 992px
-  
-//@media(max-width:991px)
-	
-
-//@media(max-width:767px)
-	
-
-//@media(max-width:480px)
-	
+﻿@media(min-width: 1030px)
+	.menu
+		>li
+			&:before
+				transition: all .3s ease
+			>a
+				transition: all .3s ease				
+			&:hover
+				&:before
+					opacity: 0
+				&+li:before
+					opacity: 0
+				>a
+					background-color: $gray
+					border-color: $green
+		ul
+			>li
+				>a
+					transition: all .3s ease
+				&:hover>a
+					color: $blue
+				
+@media(max-width: 1029px)
+	body
+		font-size: 14px
+		line-height: 1.5
+	p
+		margin: 0 0 1.6em
+	figure
+		margin: 2.1em 0 1.7em
+	figcaption
+		font-size: 13px
+		line-height: 24/13*1
+		margin: .6em 0 0
+	ul,ol
+		padding-left: 1.6em
+	ol
+		margin: 2.1em 0 1.9em
+		>li
+			margin: 0 0 .6em
+	ul
+		margin: 0 0 1.9em
+		>li
+			margin-bottom: .6em
+	blockquote
+		margin: 3.1em 0 2.1em 15px
+		padding: 27px 20px 30px 20px
+	em
+		margin: 1.6em 0
+		padding-left: 1em
+	h1
+		font-size: 24px
+		line-height: 30/24*1
+		margin: 0 0 .85em
+	h2
+		font-size: 18px
+		line-height: 30/18*1
+		margin: 0 0 .6em
+	h3
+		font-size: 16px
+		line-height: 1.5
+		margin: 0 0 1.1em
+	h4
+		font-size: 15px
+		line-height: 1.6
+		margin: 1.8em 0 1.3em
+	[type=text],
+	[type=tel],
+	[type=email],
+	[type=url],
+	[type=password],
+	textarea
+		font-size: 14px
+		padding: 9.5px 18px
+		margin: 0 0 10px
+	.double-field
+		display: block
+	.btn
+		font-size: 14px
+		line-height: 40px
+		padding: 0 15px
+		&--medium
+			font-size: 15px
+			line-height: 35px
+		&--small
+			font-size: 15px
+			line-height: 30px
+	.menu-btn
+		display: inline-block
+		font-size: 23px
+		cursor: pointer
+		margin: 0 0 0 40px
+	.search-btn
+		margin: 0 0 0 auto
+	.header
+		padding: 23px 0 21px
+		&__logo
+			width: 154px
+		&__menu
+			display: none
+	.sidebar-page
+		padding: 24px 0 44px
+		&__inner
+			display: block
+		&__content
+			width: auto
+		&__sidebar
+			width: auto
+			margin: 44px 0 0
+	.breadcrumbs
+		margin: 0 0 25px
+	.text-block
+		margin: 0 0 58px
+	.comments
+		margin: 0 0 57px
+		&__title
+			margin: 0 0 1.4em
+		&__list
+			margin: 0 0 29px
+		&__sub
+			padding-left: 19px
+		&__submit-btn
+			display: block
+			width: 100%
+	.similar-posts
+		&__title
+			margin: 0 0 .9em
+		&__list
+			font-size: 15px
+			line-height: 1.6
+	.menu
+		display: none
+	.small-card
+		&__category
+			font-size: 15px
+			line-height: 1.6
+			margin: 0 0 .4em
+		&__title
+			margin: 0 0 .75em
+	.blog-widget
+		&__title
+			font-size: 18px
+			line-height: 30/18*1
+			margin: 0 0 .5em
+	.tags
+		margin: 0 -2px 59px
+		>li
+			margin: 2px
+			>a
+				font-size: 13px
+				line-height: 33px
+	.banner
+		padding: 99px 30px 97px
+		margin: 0 auto 57px
+		&__btn
+			margin: 0 0 7px
+	.comments-widget
+		&__title
+			font-size: 18px
+			line-height: 30/18*1
+			margin: 0 0 .4em
+		&__author
+			font-size: 15px
+			line-height: 1.6
+			margin: 0 0 .5em		
+	.footer
+		padding: 35px 0 30px
+		&__wrapper
+			display: block
+		&__main
+			display: block
+			margin: 0
+		&__logo
+			width: 155px
+			display: block
+			margin: 0 auto 22px
+		&__copy
+			display: none
+		&__text
+			margin: 0 0 1.8em
+		&__menu
+			margin: 0 0 2.3em
+			padding: 0
+			font-size: 15px
+			line-height: 2
+			column-gap: 30px
+			>li
+				margin: 0 0 .7em
+		&__social
+			margin: 0 -5px
+			display: flex
+			flex-wrap: wrap
+			align-items: center
+			&-link
+				margin: 0 5px 10px
+				flex-basis: 135px

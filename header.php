@@ -13,7 +13,13 @@
 <body>
 	<header class="header">
 		<div class="wrapper header__wrapper">
-			<a href="/" class="logo header__logo"><img src="img/logo.svg" alt=""></a>
+			<a href="/" class="logo header__logo">
+				<img src="img/logo.svg" alt="" class="logo__img">
+				<span class="logo__text">
+					<strong class="logo__title">batrakov.info</strong>
+					<span>Персональный СЕО блог</span>
+				</span>				
+			</a>
 			<ul class="header__menu">
 				<li><a href="/">Главная</a></li>
 				<li><a href="#">Работы</a></li>

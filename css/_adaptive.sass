@@ -1,4 +1,6 @@
 ﻿@media(min-width: 1030px)
+	a:hover
+		text-decoration: none
 	.menu
 		>li
 			&:before
@@ -104,6 +106,16 @@
 				content: '\e909'
 	.search-btn
 		margin: 0 0 0 auto
+	.logo
+		font-size: 9px
+		&__img
+			width: 23px
+			margin: 0 13px 0 0
+		&__text
+			width: calc(100% - 36px)
+		&__title
+			font-size: 17px
+		
 	@keyframes fadeIn
 		from
 			opacity: 0
@@ -111,8 +123,6 @@
 			opacity: 1
 	.header
 		padding: 23px 0 21px
-		&__logo
-			width: 154px
 		&__menu
 			display: block
 			z-index: 2
@@ -280,6 +290,8 @@
 			margin: 0 0 .6em
 	.category
 		padding-top: 0
+		&__box
+			justify-content: center
 	.pagination
 		font-size: 15px
 		line-height: 1.6
@@ -334,8 +346,9 @@
 			display: block
 			margin: 0
 		&__logo
-			width: 155px
-			display: block
+			display: flex
+			width: max-content
+			max-width: 100%
 			margin: 0 auto 22px
 		&__copy
 			display: none

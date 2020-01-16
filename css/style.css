@@ -309,12 +309,38 @@ ul > li:last-child {
 
 /*ШАПКА */
 .logo {
-  display: inline-block;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  color: rgba(46, 46, 46, 0.7);
+  line-height: normal;
+  font-size: 11px;
+  text-decoration: none;
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 auto;
+          flex: 0 0 auto;
 }
-.logo img {
+.logo__img {
+  width: 26px;
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 auto;
+          flex: 0 0 auto;
+  margin-right: 16px;
+}
+.logo__text {
   display: block;
-  width: 100%;
-  height: 100%;
+  width: calc(100% - 42px);
+}
+.logo__title {
+  display: block;
+  color: #2e3755;
+  font-weight: 900;
+  font-size: 20px;
+  line-height: 1;
+  margin: 0 0 3px;
 }
 
 .menu-btn {
@@ -371,12 +397,6 @@ ul > li:last-child {
           align-items: center;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
-}
-.header__logo {
-  width: 181px;
-  -webkit-box-flex: 0;
-      -ms-flex: 0 0 auto;
-          flex: 0 0 auto;
 }
 .header__menu {
   list-style: none;
@@ -1174,6 +1194,10 @@ ul > li:last-child {
 
 /*АДАПТИВ */
 @media(min-width: 1030px) {
+  a:hover {
+    text-decoration: none;
+  }
+
   .menu > li:before {
     -webkit-transition: all 0.3s ease;
     transition: all 0.3s ease;
@@ -1325,6 +1349,20 @@ ul > li:last-child {
     margin: 0 0 0 auto;
   }
 
+  .logo {
+    font-size: 9px;
+  }
+  .logo__img {
+    width: 23px;
+    margin: 0 13px 0 0;
+  }
+  .logo__text {
+    width: calc(100% - 36px);
+  }
+  .logo__title {
+    font-size: 17px;
+  }
+
   @-webkit-keyframes fadeIn {
     from {
       opacity: 0;
@@ -1344,9 +1382,6 @@ ul > li:last-child {
   }
   .header {
     padding: 23px 0 21px;
-  }
-  .header__logo {
-    width: 154px;
   }
   .header__menu {
     display: block;
@@ -1582,6 +1617,11 @@ ul > li:last-child {
   .category {
     padding-top: 0;
   }
+  .category__box {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
 
   .pagination {
     font-size: 15px;
@@ -1652,8 +1692,13 @@ ul > li:last-child {
     margin: 0;
   }
   .footer__logo {
-    width: 155px;
-    display: block;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    width: -webkit-max-content;
+    width: -moz-max-content;
+    width: max-content;
+    max-width: 100%;
     margin: 0 auto 22px;
   }
   .footer__copy {

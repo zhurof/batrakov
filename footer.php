@@ -1,7 +1,13 @@
 	<footer class="footer">
 		<div class="wrapper footer__wrapper">
 			<div class="footer__main">
-				<a href="/" class="logo footer__logo"><img src="img/logo.svg" alt=""></a>
+				<a href="/" class="logo footer__logo">
+					<img src="img/logo.svg" alt="" class="logo__img">
+					<span class="logo__text">
+						<strong class="logo__title">batrakov.info</strong>
+						<span>Персональный СЕО блог</span>
+					</span>				
+				</a>
 				<div class="footer__copy">© 2020</div>
 				<div class="footer__text">Дальнейшее совершенствование и автоматизация производительных сил, развитие разделения труда могут потребовать перехода к новой общественно-экономической формации (далеко не первого в человеческой истории;</div>
 			</div>

@@ -189,16 +189,21 @@ button,
 	text: 
 		align: center
 		decoration: none
-		transform: none
+		transform: uppercase
 		shadow: none
 		overflow: ellipsis
 	white-space: nowrap
 	max-width: 100%
 	user-select: none
 	overflow: hidden
-	&--medium
+	&--small
 		line-height: 35px
 		padding: 0 16px
+		text-transform: none
+	&--block
+		display: block
+		width: 100%
+		padding: 0 10px
 /*заголовки*/
 h1,h2,h3,h4,h5,h6
 	margin: 0 0 1em
@@ -252,6 +257,10 @@ ul
 	max-width: 1030px
 	margin: 0 auto
 	padding: 0 20px
+.box
+	display: flex
+	flex-wrap: wrap
+	margin: 0 -15px
 
 /*ШАПКА*/
 .logo
@@ -268,6 +277,30 @@ ul
 	cursor: pointer
 	color: inherit
 	text-decoration: none
+.search-form
+	display: none
+	background: none
+	padding: 0
+	position: relative
+	width: 400px
+	max-width: 100%
+	color: #fff
+	&__input
+		border-radius: 0
+		border: none
+		background: none
+		border-bottom: 2px solid
+		padding: 14px 100px 14px 0
+		margin: 0
+	&__btn
+		appearance: none
+		border: none
+		background: none
+		padding: 15px
+		position: absolute
+		top: 0
+		right: 40px
+		
 .header
 	padding: 31px 0 25px
 	border-bottom: 2px solid transparentize($text,.9)
@@ -363,9 +396,7 @@ ul
 			margin-bottom: 0
 	&__sub
 		+unlist
-		padding: 0 0 0 32px
-	&__submit-btn
-		text-transform: uppercase
+		padding: 0 0 0 32px		
 .similar-posts
 	margin: 0 0 60px
 	&:last-child
@@ -546,6 +577,166 @@ ul
 		font-size: inherit
 		line-height: inherit
 		margin: 0 0 .7em
+.gallery
+	padding-top: 7px
+	&__item
+		display: inline-block
+		margin: 15px
+		width: 310px
+		max-width: calc(100% - 30px)
+		border-radius: 10px
+		overflow: hidden
+		position: relative		
+		&:before,
+		&:after
+			transition: all .3s ease			
+		&:before
+			content: '\e90d'
+			font: normal normal 50px/1 icomoon
+			display: inline-block
+			position: absolute
+			z-index: 1
+			top: 50%
+			left: 50%
+			transform: translate(-50%,-50%)
+			color: transparent
+		&:after
+			content: ''
+			+pos
+		img
+			display: block
+			width: 100%
+			height: 232px
+			+obj
+.card
+	width: 310px
+	max-width: calc(100% - 15px)
+	margin: 0 15px 60px
+	&__head
+		position: relative
+	&__pic
+		display: block
+		border-radius: 10px
+		overflow: hidden
+		img
+			display: block
+			width: 100%
+			height: 222px
+			+obj
+	&__tags
+		position: absolute
+		left: 7.5px
+		bottom: 7.5px
+		max-width: calc(100% - 15px)
+		display: flex
+		flex-wrap: wrap
+		align-items: center
+	&__tag
+		display: inline-block
+		background-color: $green
+		color: #fff
+		border-radius: 10px
+		text-decoration: none
+		font-size: 15px
+		font-weight: 600
+		line-height: 1
+		padding: 7.5px 16px
+		margin: 2.5px
+	&__info
+		display: flex
+		align-items: baseline
+		flex-wrap: wrap
+		justify-content: space-between
+		margin: 18px 0 0
+	&__date
+		display: inline-block
+		color: transparentize($text,.5)
+		margin-right: 10px
+	&__comments
+		color: transparentize($text,.2)
+		text-decoration: none
+		&:before
+			content: '\e908'
+			font-family: icomoon
+			color: #dbdce1
+			margin-right: 12px
+			vertical-align: middle
+	&__text
+		margin: 12px 0 0
+	&__title
+		a
+			text-decoration: none
+			color: inherit
+.category
+	padding: 26px 0 0
+	&__title
+		margin: 0 0 1.7em
+.pagination
+	display: flex
+	align-items: center
+	justify-content: center
+	font-family: Lato,sans-serif
+.page-numbers
+	display: inline-block
+	color: inherit
+	text-decoration: none
+	padding: 10px 20px
+	&.current
+		color: $blue
+		font-weight: bold
+		font-size: 18px
+		line-height: 24/18*1em
+	&.prev,&.next
+		padding: 0
+		width: 40px
+		line-height: 70px
+		font-weight: bold
+	&.prev
+		text-align: left
+		margin-right: auto
+		border-right: 1px solid #eaf2f9
+	&.next
+		text-align: right
+		margin-left: auto
+		border-left: 1px solid #eaf2f9
+.simple-page
+	padding: 35px 0 60px
+.contacts
+	&__inner
+		display: flex
+		align-items: flex-start
+		padding-top: 24px
+	&__text
+		flex: 0 0 340px
+		padding-right: 50px
+	&__phone
+		display: block
+		color: inherit
+		font-size: 24px
+		line-height: 30/24*1
+		font-weight: bold
+		text-decoration: none
+		margin: 0 0 .6em
+		&:last-child
+			margin-bottom: 0
+	&__email
+		display: block
+		text-decoration: none
+		font-weight: 600
+		margin: 0 0 2.4em
+		&:last-child
+			margin-bottom: 0
+	&__main
+		flex: 1 1 calc(100% - 340px)
+	&__form
+		display: flex
+		align-items: flex-start
+		justify-content: space-between
+		padding-top: 20px
+		textarea
+			height: 120px
+	&__form-column
+		flex-basis: calc(50% - 15px)
 .social-link
 	display: flex
 	width: max-content

@@ -1,24 +1,24 @@
 <aside class="sidebar-page__sidebar">
 	<ul class="menu">
-		<li><a href="#">О чём этот блог</a></li>
+		<li><a href="page.php">О чём этот блог</a></li>
 		<li>
-			<a href="#">Записи</a>
+			<a href="/">Записи</a>
 			<ul>
-				<li><a href="#">Подраздел 1</a></li>
-				<li><a href="#">Подраздел 2</a></li>
-				<li><a href="#">Подраздел N</a></li>
+				<li><a href="post.php">Подраздел 1</a></li>
+				<li><a href="post.php">Подраздел 2</a></li>
+				<li><a href="post.php">Подраздел N</a></li>
 			</ul>
 		</li>
-		<li><a href="#">Кейсы</a></li>
+		<li><a href="/">Кейсы</a></li>
 		<li class="open">
-			<a href="#">База знаний</a>
+			<a href="/">База знаний</a>
 			<ul style="display:block">
-				<li><a href="#">Подраздел 1</a></li>
-				<li><a href="#">Подраздел 2</a></li>
-				<li><a href="#">Подраздел N</a></li>
+				<li><a href="post.php">Подраздел 1</a></li>
+				<li><a href="post.php">Подраздел 2</a></li>
+				<li><a href="post.php">Подраздел N</a></li>
 			</ul>
 		</li>
-		<li><a href="#">Инструменты</a></li>
+		<li><a href="tools.php">Инструменты</a></li>
 	</ul>
 	<div class="blog-widget">
 		<h3 class="blog-widget__title">Последние записи</h3>
@@ -58,17 +58,17 @@
 		</div>
 	</div>
 	<ul class="tags">
-		<li><a href="#">Семантика</a></li>
-		<li><a href="#">Создание сайта</a></li>
-		<li><a href="#">Внешняя оптимизация</a></li>
-		<li><a href="#">Анализ</a></li>
-		<li><a href="#">Организация работы</a></li>
-		<li><a href="#">Деньги</a></li>
-		<li><a href="#">Поисковые системы</a></li>
-		<li><a href="#">Контент</a></li>
+		<li><a href="/">Семантика</a></li>
+		<li><a href="/">Создание сайта</a></li>
+		<li><a href="/">Внешняя оптимизация</a></li>
+		<li><a href="/">Анализ</a></li>
+		<li><a href="/">Организация работы</a></li>
+		<li><a href="/">Деньги</a></li>
+		<li><a href="/">Поисковые системы</a></li>
+		<li><a href="/">Контент</a></li>
 	</ul>
 	<a href="#" class="banner" style="background-image:url(img/banner.png)">
-		<span class="btn btn--medium banner__btn">Кейсы</span>
+		<span class="btn btn--small banner__btn">Кейсы</span>
 		<strong class="banner__text">Настройка memcached через unix-сокеты в BitrixVM</strong>
 	</a>
 	<div class="coments-widget">

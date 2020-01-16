@@ -7,6 +7,7 @@
 	<link rel="stylesheet" href="css/fonts.css" />	
 	<link rel="stylesheet" href="css/font-awesome.css" />
 	<link rel="stylesheet" href="libs/slick/slick.css" />
+	<link rel="stylesheet" href="libs/fancybox/jquery.fancybox.min.css" />
 	<link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
@@ -17,30 +18,34 @@
 				<li><a href="/">Главная</a></li>
 				<li><a href="#">Работы</a></li>
 				<li><a href="#">Услуги</a></li>
-				<li class="desktop-hidden"><a href="#">О чём этот блог</a></li>
+				<li class="desktop-hidden"><a href="page.php">О чём этот блог</a></li>
 				<li class="desktop-hidden">
-					<a href="#">Записи</a>
+					<a href="/">Записи</a>
 					<ul>
-						<li><a href="#">Подраздел 1</a></li>
-						<li><a href="#">Подраздел 2</a></li>
-						<li><a href="#">Подраздел N</a></li>
+						<li><a href="post.php">Подраздел 1</a></li>
+						<li><a href="post.php">Подраздел 2</a></li>
+						<li><a href="post.php">Подраздел N</a></li>
 					</ul>
 				</li>
 				<li class="desktop-hidden"><a href="#">Кейсы</a></li>
 				<li class="desktop-hidden">
-					<a href="#">База знаний</a>
+					<a href="/">База знаний</a>
 					<ul>
-						<li><a href="#">Подраздел 1</a></li>
-						<li><a href="#">Подраздел 2</a></li>
-						<li><a href="#">Подраздел N</a></li>
+						<li><a href="post.php">Подраздел 1</a></li>
+						<li><a href="post.php">Подраздел 2</a></li>
+						<li><a href="post.php">Подраздел N</a></li>
 					</ul>
 				</li>
-				<li class="desktop-hidden"><a href="#">Инструменты</a></li>
-				<li><a href="#">Контакты</a></li>
+				<li class="desktop-hidden"><a href="tools.php">Инструменты</a></li>
+				<li><a href="contacts.php">Контакты</a></li>
 			</ul>
-			<span class="search-btn icon-magnify"></span>
+			<a href="#search-form" class="search-btn icon-magnify" data-fancybox></a>
 			<span class="menu-btn icon-menu"></span>
 		</div>
 	</header>
+	<form action="" class="search-form" id="search-form">
+		<input type="text" class="search-form__input" />
+		<button class="icon-magnify search-form__btn"></button>
+	</form>
 <!-- Переход на страницу со ссылками на современные браузеры для ie9 и ниже -->
 <!--[if lt IE 10]><script>location.href='/old-ie.html';</script><![endif]-->

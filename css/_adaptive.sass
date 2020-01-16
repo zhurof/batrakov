@@ -19,6 +19,13 @@
 					transition: all .3s ease
 				&:hover>a
 					color: $blue
+	.gallery
+		&__item
+			&:hover
+				&:before
+					color: #fff
+				&:after
+					background-color: transparentize($text,.2)
 				
 @media(max-width: 1029px)
 	body
@@ -79,12 +86,9 @@
 		font-size: 14px
 		line-height: 40px
 		padding: 0 15px
-		&--medium
-			font-size: 15px
-			line-height: 35px
 		&--small
 			font-size: 15px
-			line-height: 30px
+			line-height: 35px
 	.menu-btn
 		display: inline-block
 		font-size: 23px
@@ -185,8 +189,10 @@
 					>a
 						color: inherit
 						text-decoration: none
-					
-				
+	.search-form
+		&__input
+			padding: 14px 100px 14px 15px
+			margin: 0
 	.sidebar-page
 		padding: 24px 0 44px
 		&__inner
@@ -251,7 +257,75 @@
 		&__author
 			font-size: 15px
 			line-height: 1.6
-			margin: 0 0 .5em		
+			margin: 0 0 .5em
+	.gallery
+		&__box
+			margin: 0 -5px
+		&__item
+			width: 280px
+			max-width: calc(100% - 10px)
+			margin: 5px
+			img
+				height: 209px
+	.card
+		margin: 0 15px 30px
+		width: 280px
+		max-width: calc(100% - 30px)
+		&__pic
+			img
+				height: 210px
+		&__info
+			margin-top: 13px
+		&__title
+			margin: 0 0 .6em
+	.category
+		padding-top: 0
+	.pagination
+		font-size: 15px
+		line-height: 1.6
+		margin: 10px -20px 0
+	.page-numbers
+		display: none
+		padding: 0
+		&.current
+			display: inline-block
+			margin-right: 4px
+			&:after
+				content: ' / '
+				font-size: 15px
+				color: $text
+				line-height: 1.6
+		/*попытка выцепить последний номер страницы для существующей структуры Wordpress-пагинации*/
+		&:last-child:not(.next),
+		&.current + &:nth-last-child(2),
+		&.dots + &:nth-last-child(2)
+			display: inline-block
+
+		&.prev,
+		&.next
+			display: inline-block
+			line-height: 50px
+			width: 50px
+			text-align: center
+	.simple-page
+		padding: 24px 0 59px
+	.contacts		
+		&__inner
+			display: block
+			padding-top: 9px
+		&__text
+			margin: 0 0 53px
+			&:last-child
+				margin-bottom: 0
+		&__phone
+			font-size: 18px
+			line-height: 30/18*1
+			margin: 0 0 .7em
+		&__email
+			margin: 0 0 2.1em
+		&__form
+			display: block
+			padding-top: 0
 	.footer
 		padding: 35px 0 30px
 		&__wrapper
